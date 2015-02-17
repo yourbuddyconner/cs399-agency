@@ -5,7 +5,8 @@ from django.forms import ModelForm
 
 class Campaign(models.Model):
 	name = models.CharField(max_length=100)
-	description = models.CharField(max_length=500)
+	description = models.TextField()
+	instructions = models.TextField()
 	start_date = models.DateField('day the campaign begins')
 	end_date = models.DateField('day the campaign ends')
 
