@@ -11,7 +11,7 @@
 					<div class="col-md-8 col-md-offset-2">
 						<h1 class="brand-heading" style="margin-top: 50px;">Ocean Marketing</h1>
 						<p class="intro-text">We'll handle your marketing campaign, and we'll do it better than a toddler or baby.</p>
-						<a href="#about" class="btn btn-circle page-scroll">
+						<a href="#about" id="scroll-button" class="btn btn-circle page-scroll">
 							<i class="fa fa-angle-double-down animated"></i>
 						</a>
 					</div>
@@ -41,7 +41,7 @@
 					{% for campaign in campaigns %}
 					<div class="text-left">
 						<h3>{{campaign.name}}</h3>
-						<p>{{campaign.start_date}} - {{campaign.end_date}}</p>
+						<p>Runs: {{campaign.start_date}} - {{campaign.end_date}}</p>
 						<p>{{campaign.description}}</p>
 						<p> 
 							<a href="/campaign/{{campaign.pk}}/">
