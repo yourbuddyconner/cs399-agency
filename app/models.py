@@ -13,6 +13,7 @@ class Campaign(models.Model):
 	def __unicode__(self):
 		return self.name
 
+# use this model for the campaign forms
 class InterestedUser(models.Model):
 	# Name
 	name = models.CharField(max_length=100)
@@ -28,6 +29,7 @@ class InterestedUser(models.Model):
 	# E-Mail Address
 	email = models.EmailField(max_length=254)
 
+# example form model
 class FruityPebblesForm(ModelForm):
 	class Meta:
 		model = InterestedUser

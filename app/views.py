@@ -1,8 +1,11 @@
 from django.shortcuts import render
+from app.models import Campaign
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home.html', {
+    	'campaigns': Campaign.objects.all()
+    })
 
 def directions(request):
     return render(request, 'directions.html')
