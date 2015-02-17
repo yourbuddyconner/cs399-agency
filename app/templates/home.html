@@ -44,9 +44,13 @@
 						<p>Runs: {{campaign.start_date}} - {{campaign.end_date}}</p>
 						<p>{{campaign.description}}</p>
 						<p> 
-							<a href="/campaign/{{campaign.pk}}/">
-								View Campaign Webpage
-							</a>
+							{% if campaign.isRunning %}
+								<a href="/campaign/{{campaign.pk}}/">
+									View Campaign Webpage
+								</a>
+							{% else %}
+								<p>This Campaign is Not Running</p>
+							{% endif %}
 						</p>
 					</div>
 					{% endfor %}

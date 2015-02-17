@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.core.validators import RegexValidator
 from django.forms import ModelForm
+import datetime
 
 class Campaign(models.Model):
 	name = models.CharField(max_length=100)
@@ -9,6 +10,10 @@ class Campaign(models.Model):
 	instructions = models.TextField()
 	start_date = models.DateField('day the campaign begins')
 	end_date = models.DateField('day the campaign ends')
+
+	def isRunning(self): 
+		today =  datetime.date.today()
+		return self.start_date < today and today < self.end_date
 
 	# returns a friendly name for django
 	def __unicode__(self):
