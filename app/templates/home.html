@@ -41,8 +41,13 @@
 					{% for campaign in campaigns %}
 					<div class="text-left">
 						<h3>{{campaign.name}}</h3>
-						<p>{{campaign.description}}</p>
 						<p>{{campaign.start_date}} - {{campaign.end_date}}</p>
+						<p>{{campaign.description}}</p>
+						<p> 
+							<a href="/campaign/{{campaign.pk}}/">
+								View Campaign Webpage
+							</a>
+						</p>
 					</div>
 					{% endfor %}
 				</div>

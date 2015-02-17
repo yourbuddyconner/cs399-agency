@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+	<header class="intro" style="background: url({{campaign.image}}) no-repeat bottom center scroll; background-size: 100%;">
+		<div class="intro-body">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<h1 class="brand-heading" style="margin-top: 75px;">{{campaign.name}}</h1>
+						<p class="intro-text">{{campaign.description}}</p>
+						<a href="#about" class="btn btn-circle page-scroll">
+							<i class="fa fa-angle-double-down animated"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Download Section -->
+	<section id="download" class="content-section text-center">
+		<div class="download-section">
+			<div class="container">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h2>Enter Your Personal Details</h2>
+					<p>FORM GOES HERE</p>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

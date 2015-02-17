@@ -7,7 +7,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^$', 'app.views.home', name='home'),
-    url(r'^directions', 'app.views.directions', name='directions'),
+    url(r'^campaign/(?P<id>\d+)/', 'app.views.campaign_detail', name="campaign_detail"),
     url(r'^merchandise', 'app.views.merchandise', name='merchandise'),
     url(r'^tickets', 'app.views.tickets', name='tickets'),
     url(r'^schedule', 'app.views.schedule', name='schedule'),
