@@ -10,7 +10,8 @@ try:
                         "fun way to consume massive amounts of processed sugar and food dyes!",
             instructions="Fill out the form below and get a free case of fruity, sugary goodness!",
             start_date=date(2015, 1, 1),
-            end_date=date(2016, 5, 29)
+            end_date=date(2016, 5, 29),
+            formID = 'FruityPebblesForm'
         )
         Campaign.objects.create(
             name="SickNasty Air Guitar",
@@ -19,7 +20,15 @@ try:
                         "hands in front of the guitar modoule and let the SickNasty Air Guitar take care of the music.",
             instructions="Fill out the form below and get a free Air Guitar!",
             start_date=date(2015, 6, 1),
-            end_date=date(2016, 6, 30)
+            end_date=date(2016, 6, 30),
+            formID = 'FruityPebblesForm1'
+        )
+        Campaign.objects.create(
+            name="Who Doesn't Want Slippers",
+            description="Once, long ago you",
+            start_date=date(2015, 2, 1),
+            end_date=date(2016, 2, 20),
+            formID = 'WinLoafersForm'
         )
 except django.db.utils.OperationalError: 
     pass

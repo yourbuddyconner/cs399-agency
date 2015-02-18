@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from app.models import Campaign
-
+from app.models import *
+from django.http import HttpResponseRedirect
 
 def home(request):
     return render(request, 'home.html', {
@@ -9,9 +9,11 @@ def home(request):
 
 
 def campaign_detail(request, id):
-    return render(request, 'campaign_detail.html', {
-        'campaign': Campaign.objects.get(pk=int(id))
-    })
+    form = Campaign.objects.get(pk=int(id))  # get campaign object
+    form = eval(form.formID)                 # turn string to class
+    x = {'campaign': Campaign.objects.get(pk=int(id)),'form':form}
+    return render(request, 'campaign_detail.html', x)
+
 
 
 def merchandise(request):

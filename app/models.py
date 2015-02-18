@@ -11,6 +11,7 @@ class Campaign(models.Model):
     instructions = models.TextField()
     start_date = models.DateField('day the campaign begins')
     end_date = models.DateField('day the campaign ends')
+    formID = models.CharField(max_length=100, default='')
 
     def isRunning(self):
         today = datetime.date.today()
@@ -45,3 +46,8 @@ class FruityPebblesForm(ModelForm):
     class Meta:
         model = InterestedUser
         fields = ['name', 'address_city', 'address_state', 'address_zip', 'address_street', 'phone_number', 'email']
+
+class WinLoafersForm(ModelForm):
+    class Meta:
+        model = InterestedUser
+        fields = ['name','email', 'phone_number']

@@ -26,7 +26,12 @@
 				<div class="col-lg-8 col-lg-offset-2">
 					<h2>Enter Your Personal Details</h2>
 					<p>{{campaign.instructions}}</p>
-					<p>FORM GOES HERE</p>
+					<p>FORM GOES HERE
+                    <form action="" method="get">
+                        {% csrf_token %}
+                        {{ form.as_ul }}
+                    </form>
+                    </p>
 				</div>
 			</div>
 		</div>
