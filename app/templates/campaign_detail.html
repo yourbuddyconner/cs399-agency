@@ -27,12 +27,12 @@
 					<h2>Enter Your Personal Details</h2>
 					<p>{{campaign.instructions}}</p>
 					<p>FORM GOES HERE
-                    <form class="form-horizontal" action="" method="get">
+                    <form class="form" action="" method="get">
                         {% csrf_token %}
                    {% for field in form %}
-                   <div class="form-group form-group-lg">
-                       <label class="col-sm-2 control-label">{{ field.name }}</label>
-                       <div class="form-control col-sm-2l">{{ field}}</div>
+                   <div class="form-horizontal ">
+                       <label class="">{{ field.name }}</label>
+                       <div class="">{{ field}}</div>
                     </div>
                         {% endfor %}
                     <br><button type="submit" class="btn-default">submit</button>
