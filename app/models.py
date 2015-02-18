@@ -39,6 +39,8 @@ class InterestedUser(models.Model):
     phone_number = models.CharField(validators=[phone_regex], max_length=20)  # validators should be a list
     # E-Mail Address
     email = models.EmailField(max_length=254)
+    def __unicode__(self):
+        return self.name
 
 
 # example form model
