@@ -2,6 +2,8 @@
 
 {% block title %}{% endblock %}
 
+{% load bootstrap3 %}
+
 {% block content %}
 	<header class="intro" style="background: url({{campaign.image}})">
 		<div class="intro-body">
@@ -20,24 +22,21 @@
 	</header>
 
 	<!-- Download Section -->
-	<section id="sign_up" class="content-section text-center">
+	<section id="sign_up" class="content-section text-left">
 		<div class="download-section">
 			<div class="container">
 				<div class="col-lg-8 col-lg-offset-2">
 					<h2>Enter Your Personal Details</h2>
 					<p>{{campaign.instructions}}</p>
-					<p>FORM GOES HERE
-                    <form class="form" action="" method="get">
-                        {% csrf_token %}
-                   {% for field in form %}
-                   <div class="form-horizontal ">
-                       <label class="">{{ field.name }}</label>
-                       <div class="">{{ field}}</div>
-                    </div>
-                        {% endfor %}
-                    <br><button type="submit" class="btn-default">submit</button>
-                    </form>
-                    </p>
+					<form class="form" action="/campaign/{{campaign.pk}}/#sign_up" method="POST">
+						{% csrf_token %}
+						{% bootstrap_form form %}
+					    {% buttons %}
+					        <button type="submit" class="btn btn-primary">
+					            <i class="fa fa-diamond"></i> Submit
+					        </button>
+					    {% endbuttons %}
+					</form>
 				</div>
 			</div>
 		</div>

@@ -42,7 +42,7 @@ class InterestedUser(models.Model):
 
 
 # example form model
-class FruityPebblesForm(ModelForm):
+class CampaignForm(ModelForm):
     class Meta:
         model = InterestedUser
         fields = ['name', 'address_city', 'address_state', 'address_zip', 'address_street', 'phone_number', 'email']

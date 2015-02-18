@@ -9,10 +9,15 @@ def home(request):
 
 
 def campaign_detail(request, id):
-    form = Campaign.objects.get(pk=int(id))  # get campaign object
-    form = eval(form.formID)                 # turn string to class
-    x = {'campaign': Campaign.objects.get(pk=int(id)),'form':form}
-    return render(request, 'campaign_detail.html', x)
+    if request.POST:
+        form = CampaignForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = CampaignForm()
+
+    template_params = {'campaign': Campaign.objects.get(pk=int(id)),'form':form}
+    return render(request, 'campaign_detail.html', template_params)
 
 
 
