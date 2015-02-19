@@ -38,6 +38,12 @@ footer #social-icons a {
     color: #555555;
 }
 
+h2, p{
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-fill-color: white ;
+}
+
 .section-striped {
     background-color: #111111;
     background-image: linear-gradient(45deg, rgba(255, 255, 255, .02) 50%, transparent 50%),
