@@ -9,7 +9,7 @@ def home(request):
 
 
 def campaign_detail(request, id):
-    if request.POST:
+    if request.method == 'POST':
         form = CampaignForm(request.POST)
         if form.is_valid():
             form.save()

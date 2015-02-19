@@ -26,11 +26,10 @@ class Campaign(models.Model):
 class InterestedUser(models.Model):
     # Name
     name = models.CharField(max_length=100)
-    # Parts of Street Address
-    address_street = models.CharField(max_length=150)
-    address_city = models.CharField(max_length=150)
-    address_state = models.CharField(max_length=150)
-    address_zip = models.CharField(max_length=150)
+    # Other Fields
+    twitter_regex = RegexValidator(regex=r'^@?(\w){1,15}$',
+                                 message="Please enter a valid twitter handle.")
+    twitter_handle = models.CharField(validators=[twitter_regex], max_length=100, null=True)
     # Phone Number
     # taken from http://stackoverflow.com/questions/19130942/whats-the-best-way-to-store-phone-number-in-django-models
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
@@ -47,7 +46,7 @@ class InterestedUser(models.Model):
 class CampaignForm(ModelForm):
     class Meta:
         model = InterestedUser
-        fields = ['name', 'address_city', 'address_state', 'address_zip', 'address_street', 'phone_number', 'email']
+        fields = ['name', 'twitter_handle', 'phone_number', 'email']
 
 class WinLoafersForm(ModelForm):
     class Meta:
