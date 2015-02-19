@@ -267,6 +267,22 @@ a:focus {
     background-size: cover;
     -o-background-size: cover;
 }
+.thank-you-section {
+    width: 100%;
+    padding: 50px 0;
+    color: #fff;
+    background: url(../images/downloads-bg.jpg) no-repeat center center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.thank-you-section .brand-heading {
+    font-size: 60px;
+    text-shadow: 2px 2px 2px #000;
+}
 
 #map {
     width: 100%;

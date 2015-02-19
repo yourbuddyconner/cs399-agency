@@ -4,7 +4,8 @@ from django.http import HttpResponseRedirect
 
 def home(request):
     return render(request, 'home.html', {
-        'campaigns': Campaign.objects.all()
+        'campaigns': Campaign.objects.all(),
+        'navoptions': [('About', '#about'), ('Campaigns', '#campaigns'), ('Contact', '#contact')]
     })
 
 
@@ -14,25 +15,23 @@ def campaign_detail(request, id):
         if form.is_valid():
             form.save()
             name = form.cleaned_data['name']
-            template_params = {'campaign': Campaign.objects.get(pk=int(id)),'form':form,'name':name}
+            template_params = {
+                'campaign': Campaign.objects.get(pk=int(id)),
+                'form':form,
+                'name':name,
+                'navoptions': [('Go Home', '/home/')]
+            }
             return render(request, 'thank_you.html', template_params)
     else:
         form = CampaignForm()
 
-    template_params = {'campaign': Campaign.objects.get(pk=int(id)),'form':form}
-    return render(request, 'campaign_detail.html', template_params)
+    return render(request, 'campaign_detail.html', {
+        'campaign': Campaign.objects.get(pk=int(id)),
+        'form':form,
+        'navoptions': [('Sign Up', '#sign-up')]
+    })
 
 def thank_you(request):
-    return render(request, 'thank_you.html')
-	
-
-def merchandise(request):
-    return render(request, 'merchandise.html')
-
-
-def tickets(request):
-    return render(request, 'tickets.html')
-
-
-def schedule(request):
-    return render(request, 'schedule.html')
+    return render(request, 'thank_you.html', {
+        'navoptions': [('Go Home', '/home/')]
+    })

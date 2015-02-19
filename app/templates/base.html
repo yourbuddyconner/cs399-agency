@@ -45,15 +45,11 @@
 					<li class="hidden">
 						<a href="#page-top"></a>
 					</li>
+					{% for option in navoptions %}
 					<li>
-						<a class="page-scroll" href="#about">About</a>
+						<a class="page-scroll" href="{{option.1}}">{{option.0}}</a>
 					</li>
-					<li>
-						<a class="page-scroll" href="#campaigns">Campaigns</a>
-					</li>
-					<li>
-						<a class="page-scroll" href="#contact">Contact</a>
-					</li>
+					{% endfor %}
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
