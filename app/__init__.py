@@ -21,11 +21,12 @@ try:
             instructions="Fill out the form below and get a free Air Guitar!",
             start_date=date(2015, 6, 1),
             end_date=date(2016, 6, 30),
-            formID = 'FruityPebblesForm1'
+            formID = 'SickNastyAirGuitarForm'
         )
         Campaign.objects.create(
             name="Who Doesn't Want Slippers",
             description="Once, long ago you",
+			instructions="Fill out the form below for a chance to win a pair of glass slippers",
             start_date=date(2015, 2, 1),
             end_date=date(2016, 2, 20),
             formID = 'WinLoafersForm'
