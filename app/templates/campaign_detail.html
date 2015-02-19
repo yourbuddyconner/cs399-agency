@@ -28,9 +28,11 @@
 				<div class="col-lg-8 col-lg-offset-2">
 					<h2>Enter Your Personal Details</h2>
 					<p>{{campaign.instructions}}</p>
-					<form class="form" action="/campaign/{{campaign.pk}}/#sign_up" method="POST">
+					<form class="form" action="campaign_detail.html" method="POST">
+                        
 						{% csrf_token %}
 						{% bootstrap_form form %}
+							
 					    {% buttons %}
 					        <button type="submit" class="btn btn-primary">
 					            <i class="fa fa-diamond"></i> Submit
