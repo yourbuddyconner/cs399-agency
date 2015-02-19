@@ -43,12 +43,37 @@ class InterestedUser(models.Model):
 
 
 # example form model
-class CampaignForm(ModelForm):
+class NameTwitterPhonenumberEmail(ModelForm):
     class Meta:
         model = InterestedUser
         fields = ['name', 'twitter_handle', 'phone_number', 'email']
 
-class WinLoafersForm(ModelForm):
+class NamePhonenumberEmail(ModelForm):
     class Meta:
         model = InterestedUser
-        fields = ['name','email', 'phone_number']
+        fields = ['name', 'phone_number', 'email']
+
+class NameEmail(ModelForm):
+    class Meta:
+        model = InterestedUser
+        fields = ['name', 'email']
+
+class TwitterPhonenumberEmail(ModelForm):
+    class Meta:
+        model = InterestedUser
+        fields = ['twitter_handle', 'phone_number', 'email']
+
+class TwitterPhonenumber(ModelForm):
+    class Meta:
+        model = InterestedUser
+        fields = ['twitter_handle', 'phone_number']
+
+class TwitterEmail(ModelForm):
+    class Meta:
+        model = InterestedUser
+        fields = [ 'twitter_handle', 'email']
+
+class Email(ModelForm):
+    class Meta:
+        model = InterestedUser
+        fields = ['email']
