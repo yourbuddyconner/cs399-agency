@@ -80,7 +80,7 @@ class Email(ModelForm):
         model = InterestedUser
         fields = ['email']
 
-class FullnameAddressSocialSecurityShamefulHighSchoolEmailCurrentHumidyLevelFirstPetsNameChildsBirthdayAnyOtherPossibleThingThatICouldUseToStealYourIdentity(ModelForm):
+class NameEmailPhoneNumberDog(ModelForm):
     class Meta:
         model = InterestedUser
         fields = ['name', 'email', 'phone_number', 'dog_preferance']

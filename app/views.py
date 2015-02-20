@@ -8,12 +8,11 @@ def home(request):
         'navoptions': [('About', '#about'), ('Campaigns', '#campaigns'), ('Contact', '#contact')]
     })
 
-
 def campaign_detail(request, id):
-    formID = Campaign.objects.get(pk=int(id))
-    formID = eval(formID.formID)
+    campaign = Campaign.objects.get(pk=int(id))
+    form_class = eval(campaign.formID)
     if request.method == 'POST':
-        form = formID(request.POST)
+        form = form_class(request.POST)
         if form.is_valid():
             form.save()
             name = form.cleaned_data['name']
@@ -25,7 +24,7 @@ def campaign_detail(request, id):
             }
             return render(request, 'thank_you.html', template_params)
     else:
-        form = formID
+        form = form_class
 
     return render(request, 'campaign_detail.html', {
         'campaign': Campaign.objects.get(pk=int(id)),
