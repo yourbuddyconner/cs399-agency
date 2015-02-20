@@ -41,7 +41,8 @@
 				<div class="col-lg-8 col-lg-offset-2">
 					<h2>Our Campaigns</h2>
 					{% for campaign in campaigns %}
-					<div class="text-left">
+					<hr>
+					<div class="campaign-info text-left">
 						<h3>{{campaign.name}}</h3>
 						<p>Runs: {{campaign.start_date}} - {{campaign.end_date}}</p>
 						<p>{{campaign.description}}</p>
@@ -55,6 +56,7 @@
 							{% endif %}
 						</p>
 					</div>
+
 					{% endfor %}
 					<a href="#contact" id="scroll-button" class="btn btn-circle page-scroll">
 						<i class="fa fa-angle-double-down animated"></i>

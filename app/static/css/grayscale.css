@@ -158,6 +158,9 @@ a:focus {
     text-shadow: 2px 2px 2px #000;
 }
 
+.campaign-info p, h3{
+    text-shadow: .5px .5px .5px #000;  
+}
 .intro .intro-body .intro-text {
     font-size: 18px;
 }
