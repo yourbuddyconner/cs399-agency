@@ -27,7 +27,7 @@ class InterestedUser(models.Model):
     # Name
     name = models.CharField(max_length=100)
     # Other Fields
-    twitter_regex = RegexValidator(regex=r'@([A-Za-z0-9_]+)',
+    twitter_regex = RegexValidator(regex=r'^@?(\w){1,15}$',
                                  message="Please enter a valid twitter handle.")
     twitter_handle = models.CharField(validators=[twitter_regex], max_length=100, null=True)
     # Phone Number
