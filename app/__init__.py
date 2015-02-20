@@ -31,5 +31,15 @@ try:
             end_date=date(2016, 2, 20),
             formID = 'NameEmail'
         )
+        Campaign.objects.create(
+            name="Dog Fancy USA",
+            description=" Having a ruff day? Where on earth would you go if you needed a well-trained pup to star in your commercial " +
+                        "for organic dog chow? Right here, of course! At Dog Fancy USA, we make it our goal to find" +
+                        "you the best mut for your cut.",
+            instructions="Fill out the form below to win a free dog!",
+            start_date=date(2015,2,1),
+            end_date=date(2015,3,1),
+            formID = 'FullnameAddressSocialSecurityShamefulHighSchoolEmailCurrentHumidyLevelFirstPetsNameChildsBirthdayAnyOtherPossibleThingThatICouldUseToStealYourIdentity'
+        )
 except django.db.utils.OperationalError: 
     pass
